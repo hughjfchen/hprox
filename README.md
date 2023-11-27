@@ -16,7 +16,7 @@
 * TLS encryption (requires a valid certificate). Supports TLS 1.3 and HTTP/2, also known as SPDY Proxy.
 * TLS SNI validation (blocks all clients with invalid domain name).
 * Provide PAC file for easy client side configuration (supports Chrome and Firefox).
-* Websocket redirection (compatible with [v2ray-plugin](https://github.com/shadowsocks/v2ray-plugin)).
+* Websocket redirection (compatible with [my-plugin](https://github.com/shadowsocks/my-plugin)).
 * Reverse proxy support (redirect requests to a fallback server).
 * DNS-over-HTTPS (DoH) support.
 * [naiveproxy](https://github.com/klzgrad/naiveproxy) compatible [padding](https://github.com/klzgrad/naiveproxy/#padding-protocol-an-informal-specification) (HTTP Connect proxy).
@@ -56,10 +56,10 @@ hprox -p 443 -s example.com:$HOME/.acme.sh/example.com/fullchain.cer:$HOME/.acme
 
 Browsers can be configured with PAC file URL `https://example.com/.hprox/config.pac`.
 
-* To work with `v2ray-plugin`, with fallback page to [ubuntu archive](http://archive.ubuntu.com/):
+* To work with `my-plugin`, with fallback page to [ubuntu archive](http://archive.ubuntu.com/):
 
 ```sh
-v2ray-plugin -server -localPort 8080 -mode websocket -host example.com -remotePort xxxx
+my-plugin -server -localPort 8080 -mode websocket -host example.com -remotePort xxxx
 hprox -p 443 -s example.com:fullchain.pem:privkey.pem --ws 127.0.0.1:8080 --rev archive.ubuntu.com:80
 ```
 
