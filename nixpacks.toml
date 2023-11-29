@@ -1,2 +1,2 @@
 [phases.setup]
-nixPkgs = ["...", "gcc"] # Install the ffmpeg package from Nix
+nixPkgs = ["...", "gcc", "gmp"] # Install the ffmpeg package from Nix
